@@ -1,0 +1,23 @@
+%h3
+  Comments
+  %span.comment_count (#{subject.comments.count})
+
+- subject.comments.each do |comment|
+  .comment
+    %p
+      %em= comment.author_name
+      said at #{distance_of_time_in_words(subject.created_at, comment.created_at)} later:
+    %p= comment.body
+
+%h4 Add Your Comment
+= form_for(subject.comments.new) do |f|
+  %p
+    = f.label :author_name
+    %br
+    = f.text_field :author_name
+  %p
+    = f.label :body
+    %br
+    = f.text_area :body
+  = f.hidden_field :article_id
+  = f.submit "Save"
