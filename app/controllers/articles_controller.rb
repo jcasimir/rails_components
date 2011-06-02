@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.search(params)
+    @articles = Article.search(params).page(params[:page]).per(10).order(:title)
   end
 
   def new
