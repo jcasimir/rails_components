@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+gem 'rake', '0.8.7'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -20,6 +21,7 @@ group :development, :test do
   # Mac OS X
   gem 'rb-fsevent'
   gem 'growl'
+  gem "capybara-webkit", :git => "https://github.com/thoughtbot/capybara-webkit.git", :branch => "1.0"
 
   # Linux
   #gem 'rb-inotify'

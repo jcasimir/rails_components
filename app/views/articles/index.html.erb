@@ -1,4 +1,6 @@
-<h1>All Articles</h1>
+<script type="text/javascript">
+  document.write('<h1>' + 'all articles'.toUpperCase() + '</h1>');
+</script> 
 
 <p class='flash'><%= flash[:notice] %></p>
 
@@ -10,7 +12,7 @@
 
 <ul id="articles">
   <% @articles.each do |article| %>
-    <li>
+    <li id='<%= dom_id article %>'>
       <%= link_to article.title, article_path(article) %>
       <span class='tag_list'><%= article.tag_list %></span>
       <span class='actions'>
